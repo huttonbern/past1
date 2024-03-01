@@ -20,7 +20,7 @@ public class past3 {
 			sum = n[j]*(n[j]+1)/2;
 			
 			double t = System.currentTimeMillis() - start;
-			time[j]=(double)t;
+			time[j]=t;
 		}
 		
 		StdDraw.setCanvasSize(800, 600);

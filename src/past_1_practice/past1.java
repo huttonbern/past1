@@ -6,15 +6,15 @@ public class past1 {
 
 	public static void main(String[] args) {
 
-		int[] n = {10000, 50000, 1000000};
+		int[] n = {1000000, 5000000, 10000000};
 		
-		int[] time=new int[n.length];
+		double[] time=new double[n.length];
 		
 		System.out.printf("%-12s %-6s\n","n" ,"time,ms");
 		System.out.printf("--------------------\n");
 		int sum = 0;
 		for (int j = 0; j < n.length; j++) {
-			long start = System.currentTimeMillis();
+			double start = System.currentTimeMillis();
 			
 			// start
 			for (int i = 0; i < n[j]; i++) {
@@ -23,8 +23,8 @@ public class past1 {
 				}
 			}
 			
-			long t = System.currentTimeMillis() - start;
-			time[j]=(int)t;
+			double t = (System.currentTimeMillis() - start)/100;
+			time[j]=(double)t;
 		}
 		System.out.println(sum);
 		
@@ -58,7 +58,7 @@ public class past1 {
 
 		for(int i=0;i<n.length;i++) {
 			StdDraw.point(n[i], time[i]);
-			System.out.println(n[i]+","+time[i]);
+			System.out.println(n[i]/100+","+time[i]);
 		}
 
 		StdDraw.setPenColor(Color.BLUE);
