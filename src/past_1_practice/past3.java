@@ -6,7 +6,7 @@ public class past3 {
 
 	public static void main(String[] args) {
 
-		long[] n = {10000, 50000, 100000};
+		long[] n  = {1000000,2000000,3000000,4000000, 5000000, 6000000};
 		
 		double[] time=new double[n.length];
 		
@@ -17,49 +17,11 @@ public class past3 {
 			double start = System.currentTimeMillis();
 			
 			// start
-			sum = n[j]*(n[j]+1)/2;
+			sum = (long)(n[j]*(n[j]+1)/2);
 			
 			double t = System.currentTimeMillis() - start;
 			time[j]=t;
-		}
-		
-		StdDraw.setCanvasSize(800, 600);
-		double xMin,xMax,yMin,yMax;
-		xMin=xMax=n[0];
-		yMin=yMax=time[0];
-		for(int i=0;i<n.length;i++) {
-			if (xMin>n[i])
-				xMin=n[i];
-			if(xMax<n[i])
-				xMax=n[i];
-			
-			if(yMin>time[i])
-				yMin=time[i];
-			if(yMax<time[i])
-				yMax=time[i];
-		}
-		
-		System.out.println("X: "+xMin+","+xMax);
-		System.out.println("Y: "+yMin+","+yMax);
-		
-		double dx=Math.abs(xMax-xMin);
-		double dy=Math.abs(yMax-yMin);
-		StdDraw.setXscale(xMin-0.05*dx, xMax+0.05*dx); 
-		StdDraw.setYscale(yMin-0.05*dy, yMax+0.05*dy);
-		
-		StdDraw.setPenColor(Color.RED);
-		StdDraw.setPenRadius(0.03);
-		
-
-		for(int i=0;i<n.length;i++) {
-			StdDraw.point(n[i], time[i]);
-			System.out.println(n[i]+","+time[i]);
-		}
-
-		StdDraw.setPenColor(Color.BLUE);
-		StdDraw.setPenRadius(0.005);
-		for(int i=1;i<n.length;i++) {
-			StdDraw.line(n[i-1], time[i-1],n[i],time[i]);
+			System.out.println(n[j]+ " " +time[j]);
 		}
 	}
 

@@ -21,7 +21,7 @@ public class past2 {
 				sum = sum + (i+1);
 			}
 
-			double t = (System.currentTimeMillis() - start)/1000;
+			double t = (System.currentTimeMillis() - start);
 			time[j]=t;
 		}
 		
